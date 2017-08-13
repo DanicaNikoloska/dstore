@@ -1,3 +1,33 @@
+# README #
+
+This README would normally document whatever steps are necessary to get your application up and running.
+
+### What is this repository for? ###
+
+* Managing products application
+
+### How do I get set up? ###
+
+* run npm install
+* run npm run dev
+
+* Create database 'dstore'
+* run php artisan migrate
+* run php artisan db:seed
+
+* Login as:
+* Admin:
+	email: admin@gmail.com
+	password: admin123
+* Moderator:
+	email: moderator@gmail.com
+	password: moderator123
+* Visitor:
+	email: visitor@gmail.com
+	password: visitor123
+
+
+
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
 <p align="center">
