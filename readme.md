@@ -12,8 +12,8 @@ This README would normally document whatever steps are necessary to get your app
 * run command: composer install
 
 * Create database 'dstore'
-* run php artisan migrate
-* run php artisan db:seed
+* run command: php artisan migrate
+* run command: php artisan db:seed
 
 * Login as:
 * Admin:
