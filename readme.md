@@ -8,8 +8,9 @@ This README would normally document whatever steps are necessary to get your app
 
 ### How do I get set up? ###
 
-* run npm install
-* run npm run dev
+* composer install
+* npm install
+* npm run dev
 
 * Create database 'dstore'
 * run php artisan migrate
