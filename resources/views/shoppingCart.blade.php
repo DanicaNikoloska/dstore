@@ -1,14 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
-   <a href="/"><button class="btn btn-default">Continue shopping</button></a>
+   <a href="{{url('/')}}"><button class="btn btn-default">Continue shopping</button></a>
    <br><br>
    @include('inc.messages')
 @foreach($products as $product)
     <div class="media well">
         <div class="media-left">
             <a href="#">
-                <img class="media-object product_image_cart" src="../storage/images/{{$product->image}}" alt="">
+                <img class="media-object product_image_cart" src="storage/images/{{$product->image}}" alt="">
             </a>
         </div>
         <div class="media-body cart_media_body">
@@ -16,6 +16,7 @@
             <p>{{$product->description}}</p>
             <h4 class="pull-right">Price: ${{$product->price}}</h4>
             {{Form::open(array('method' => 'delete', 'url' => '/cart/'.$product->id))}}
+                 {{ csrf_field() }}
                  <button class="btn btn-danger btn_remove_product pull-right">Remove</button>
             {{Form::close()}}
         </div>

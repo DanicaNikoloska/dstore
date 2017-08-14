@@ -21,7 +21,7 @@
                 <td>{{$category->name}}</td>
                 <td>{{$category->description}}</td>
                 <td>
-                    <a href="/admin/categories/{{$category->id}}/edit">
+                    <a href="{{url('/admin/categories/'.$category->id.'/edit')}}">
                         <button class="btn btn-default">Edit</button>
                     </a>
                 <td>

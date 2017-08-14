@@ -17,7 +17,7 @@ Auth::routes();
 
 Route::get('/', 'ProductsController@index');
 
-Route::post('/', 'ProductsController@search');
+Route::post('/search', 'ProductsController@search');
 Route::get('/show/{id}', 'ProductsController@show');
 
 Route::get('/cart', 'ShoppingCartController@index')->middleware('auth', 'moderator', 'admin');

@@ -176,8 +176,7 @@ class ProductsController extends Controller
         $product = Product::find($id);
         $product->delete();
 
-        //delete image from storage
-        unlink(public_path('storage\images\\'.$product->image));
+
         return redirect('/admin/products')->with('success', 'Product removed!');
     }
 

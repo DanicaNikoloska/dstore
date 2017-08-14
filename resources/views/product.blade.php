@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <a href="/">
+    <a href="{{url('/')}}">
         <button class="btn btn-default">Go back</button>
     </a>
     <div class="media well">
@@ -16,6 +16,7 @@
             <h4>{{$product->quantity}} available</h4>
             <p>Price: <span class="product_price">${{$product->price}}</span></p>
             {{Form::open(array('method' => 'post','url' => '/cart/'.$product->id))}}
+                {{ csrf_field() }}
                 <button type="submit" class="btn btn-primary" @if(Auth::guest()) disabled @endif>Add to cart</button>
             {{Form::close()}}
 

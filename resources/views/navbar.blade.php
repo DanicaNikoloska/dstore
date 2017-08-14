@@ -31,8 +31,8 @@
                 @else
                     @if(Auth::user()->isVisitor())
                         <li>
-                            <a href="/cart">
-                                <span class="glyphicon glyphicon-shopping-cart"> </span>
+                            <a href="{{url('/cart')}}">
+                                <span> Shopping Cart</span>
                             </a>
                         </li>
                     @endif

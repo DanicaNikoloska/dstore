@@ -30,7 +30,7 @@
                         Visitor
                     @endif
                 </td>
-                <td><a href="/admin/users/{{$user->id}}/edit">
+                <td><a href="{{url('/admin/users/'.$user->id.'/edit')}}">
                         <button class="btn btn-default">Edit</button>
                     </a>
                 </td>

@@ -31,7 +31,7 @@
             <td class="text-center">{{$product->available}}</td>
             <td class="text-center">{{$product->quantity}}</td>
             <td>
-                <a href="/admin/products/{{$product->id}}/edit">
+                <a href="{{url('/admin/products/'.$product->id)}}/edit">
                     <button class="btn btn-default">Edit</button>
                 </a>
             </td>
@@ -70,7 +70,7 @@
               <div class="form-group">
                <select multiple class="form-control" name="categories[]">
                   @foreach($categories as $category)
-                     <option value="{{$category->id}}">{{$category->name}}</option>
+                     <option value="{{$category->id}}" selected>{{$category->name}}</option>
                   @endforeach
                </select>
               </div>
