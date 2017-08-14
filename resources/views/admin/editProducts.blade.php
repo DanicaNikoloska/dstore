@@ -13,7 +13,7 @@
             <input type="text" class="form-control" @if(Auth::user()->isModerator()) readonly @endif value="{{$product->description}}" name="description">
         </div>
         <div class="form-group">
-            <select multiple class="form-control" name="category_id" @if(Auth::user()->isModerator()) readonly @endif>
+            <select multiple class="form-control" name="categories[]" @if(Auth::user()->isModerator()) readonly @endif>
                 @foreach($categories as $category)
                     <option value="{{$category->id}}">{{$category->name}}</option>
                 @endforeach

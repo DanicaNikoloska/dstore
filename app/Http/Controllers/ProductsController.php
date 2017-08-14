@@ -152,13 +152,10 @@ class ProductsController extends Controller
             $filenameToStore = $request->input('oldImg');
         }
 
-        //save in database
+        //save image in database
         $product->image = $filenameToStore;
 
-
         $product->save();
-       // $product->categories()->attach($request->input('categories'));
-
 
         $categories = Category::get();
 
