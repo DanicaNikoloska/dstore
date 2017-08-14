@@ -1,0 +1,41 @@
+.thumbnail {
+  padding: 0;
+}
+
+.thumbnail > img,
+.thumbnail a > img{
+  width: 100%;
+  height: 240px !important;
+  margin: 0;
+}
+.media-heading{
+  color: #2a88bd !important;
+  font-weight: bold;
+}
+.product_price{
+  font-size: 24px;
+  font-weight: bold;
+  color: #2a88bd;
+}
+.product_image{
+  width: 300px;
+}
+.product_image_cart{
+  width: 160px;
+  height: 150px;
+}
+.btn_remove_product{
+  position: absolute;
+  right: 0;
+  bottom:0;
+}
+.cart_media_body{
+  position: relative;
+}
+.btn{
+  padding: 4px 12px !important;
+}
+.thumbnail .caption{
+  height: 115px !important;
+  overflow: hidden;
+}
