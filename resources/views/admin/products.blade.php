@@ -76,11 +76,11 @@
               </div>
                <div class="form-group">
                   <label>Price</label>
-                  <input type="number" class="form-control" name="price">
+                  <input type="number" class="form-control" max="100000" name="price">
                </div>
                <div class="form-group">
                   <label>Quantity</label>
-                  <input type="number" class="form-control" name="quantity">
+                  <input type="number" class="form-control" max="100000" name="quantity">
                </div>
                <div class="checkbox">
                   <label>
