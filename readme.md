@@ -1,12 +1,23 @@
 # README #
 
-This README would normally document whatever steps are necessary to get your application up and running.
-
-### What is this repository for? ###
-
-* Managing products application
-
 ### How do I get set up? ###
+
+WITH API INTEGRATION
+
+* run command: php artisan migrate (new column api_token is added in User table)
+* run command: php artisan db:seed (new records in Users table)
+* run command: npm install 
+* run command: npm run dev / npm run watch (in order to compile js files in assets folder)
+
+- Every user has his own api token and he can access available products using that token.
+- The list of available products can be accessed using /products in the url, for example: 
+http://localhost/dstore/public/products
+- The script is located in assets/js/getAvailableProducts.js.
+- New ApiController is added.
+- New routes in api.php and web.php
+
+
+-------------------------------------------------------------------------
 
 * git clone the project
 * run command: composer install
