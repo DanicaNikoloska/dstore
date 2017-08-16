@@ -34,3 +34,5 @@ Route::delete('/admin/products/{product}/delete', 'ProductsController@destroy')-
 
 Route::resource('admin/categories', 'CategoriesController');
 Route::resource('admin/users', 'UsersController');
+
+Route::get('/products', 'ApiController@index');
