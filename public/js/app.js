@@ -779,7 +779,7 @@ module.exports = Cancel;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(10);
-module.exports = __webpack_require__(40);
+module.exports = __webpack_require__(41);
 
 
 /***/ }),
@@ -800,7 +800,7 @@ window.Vue = __webpack_require__(35);
 window.axios = __webpack_require__(3);
 
 //get available products
-__webpack_require__(50);
+__webpack_require__(36);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -808,7 +808,7 @@ __webpack_require__(50);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('products', __webpack_require__(36));
+Vue.component('products', __webpack_require__(37));
 
 var app = new Vue({
   el: '#app'
@@ -41790,14 +41790,43 @@ module.exports = Vue$3;
 
 /***/ }),
 /* 36 */
+/***/ (function(module, exports) {
+
+
+var apiRoot = 'http://localhost/dstore/public/api/';
+var getProducts = apiRoot + 'products/available';
+
+var getToken = apiRoot + 'token';
+
+axios.get(getToken).then(function (response) {
+    var url = getProducts + '?api_token=' + response.data;
+    if (response.data) {
+        axios.get(url).then(function (response) {
+            var container = document.getElementById('listProducts');
+            if (container) {
+                var product = response.data.forEach(function (product) {
+                    var elem = document.createElement('li');
+                    elem.innerHTML = '<span>' + product.name + '</span>' + '<span class="pull-right badge">$' + product.price + '</span>' + '<span class="pull-right">' + product.quantity + ' available &nbsp;</span>';
+                    elem.classList.add('list-group-item');
+                    container.appendChild(elem);
+                });
+            }
+        });
+    } else {
+        document.getElementById('listProducts').innerHTML = '<li class="list-group-item">You have to be logged in to preview the available products</li>';
+    }
+});
+
+/***/ }),
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var Component = __webpack_require__(37)(
+var Component = __webpack_require__(38)(
   /* script */
-  __webpack_require__(38),
-  /* template */
   __webpack_require__(39),
+  /* template */
+  __webpack_require__(40),
   /* styles */
   null,
   /* scopeId */
@@ -41829,7 +41858,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 37 */
+/* 38 */
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -41926,7 +41955,7 @@ module.exports = function normalizeComponent (
 
 
 /***/ }),
-/* 38 */
+/* 39 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -41965,7 +41994,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 39 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -42020,35 +42049,10 @@ if (false) {
 }
 
 /***/ }),
-/* 40 */
+/* 41 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 41 */,
-/* 42 */,
-/* 43 */,
-/* 44 */,
-/* 45 */,
-/* 46 */,
-/* 47 */,
-/* 48 */,
-/* 49 */,
-/* 50 */
-/***/ (function(module, exports) {
-
-var apiRoot = 'http://localhost/dstore/public/api/';
-var getProducts = apiRoot + 'products/available';
-axios.get(getProducts).then(function (response) {
-    var container = document.getElementById('listProducts');
-    var product = response.data.forEach(function (product) {
-        var elem = document.createElement('li');
-        elem.innerHTML = '<span>' + product.name + '</span>' + '<span class="pull-right badge">$' + product.price + '</span>' + '<span class="pull-right">' + product.quantity + ' available &nbsp;</span>';
-        elem.classList.add('list-group-item');
-        container.appendChild(elem);
-    });
-});
 
 /***/ })
 /******/ ]);

@@ -16,18 +16,21 @@ class UserTableSeeder extends Seeder
                 'name' => 'admin',
                 'email' => 'admin@gmail.com',
                 'password' => bcrypt('admin123'),
-                'role' => 0
+                'role' => 0,
+                'api_token' => str_random(60)
             ],
             [
                 'name' => 'moderator',
                 'email' => 'moderator@gmail.com',
                 'password' => bcrypt('moderator123'),
-                'role' => 1
+                'role' => 1,
+                'api_token' => str_random(60)
             ],[
                 'name' => 'visitor',
                 'email' => 'visitor@gmail.com',
                 'password' => bcrypt('visitor123'),
-                'role' => 2
+                'role' => 2,
+                'api_token' => str_random(60)
             ]]
             );
 

@@ -36,3 +36,5 @@ Route::resource('admin/categories', 'CategoriesController');
 Route::resource('admin/users', 'UsersController');
 
 Route::get('/products', 'ApiController@index');
+
+Route::get('/api/token', 'ApiController@getToken');

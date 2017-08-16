@@ -69,6 +69,7 @@ class RegisterController extends Controller
         $user->email = $data['email'];
         $user->password = bcrypt($data['password']);
         $user->role = 2;
+        $user->api_token = str_random(60);
 
         $user->save();
 

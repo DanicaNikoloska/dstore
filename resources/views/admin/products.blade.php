@@ -5,7 +5,7 @@
    <h3>Products</h3>
    @if(Auth::user()->isAdmin())
    <hr>
-   <button class="btn btn-primary" data-toggle="modal" data-target="#addProduct"><span class="glyphicon glyphicon-plus"> </span> Add product</button>
+   <button class="btn btn-primary" data-toggle="modal" data-target="#addProduct">Add product</button>
    <hr>
    @endif
    <table class="table">
